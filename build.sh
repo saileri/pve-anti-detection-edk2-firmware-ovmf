@@ -5,7 +5,7 @@ ls
 df -h
 git clone git://git.proxmox.com/git/pve-edk2-firmware.git
 cd pve-edk2-firmware
-#git reset --hard 17443032f78eaf9ae276f8df9d10c64beec2e048
+git reset --hard d6d1dfa76c6eb6e27c0cd873e902c4387571bd3a
 apt install devscripts -y
 mk-build-deps --install
 make
