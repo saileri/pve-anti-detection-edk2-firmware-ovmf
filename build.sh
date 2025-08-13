@@ -8,16 +8,17 @@ cd pve-edk2-firmware
 #git reset --hard 17443032f78eaf9ae276f8df9d10c64beec2e048
 apt install devscripts -y
 mk-build-deps --install
-make
-make clean
+git submodule update --init --recursive
 cp ../Logo.bmp debian/
 cp ../sedPatch-pve-edk2-firmware-anti-dection.sh edk2/
 cd edk2
+meson subprojects download
 chmod +x sedPatch-pve-edk2-firmware-anti-dection.sh
 bash sedPatch-pve-edk2-firmware-anti-dection.sh
 git diff > edk2-autoGenPatch.patch
 cp edk2-autoGenPatch.patch ../
 cd ..
-apt install devscripts -y
-mk-build-deps --install
-make
+make #改为一次编译
+cd edk2
+git checkout .
+cd ..
