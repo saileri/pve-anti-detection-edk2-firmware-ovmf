@@ -55,7 +55,6 @@ jobs:
           echo "Listing files in artifacts directory:"
           ls -l artifacts/
           cd artifacts
-          rm *riscv*
           rm *legacy*
           rm *aarch64*
           rm *deps*
