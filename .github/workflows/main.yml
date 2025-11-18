@@ -55,9 +55,6 @@ jobs:
           echo "Listing files in artifacts directory:"
           ls -l artifacts/
           cd artifacts
-          rm *legacy*
-          rm *aarch64*
-          rm *deps*
           rm *firmware_4*
 
       # Step 7: 创建 GitHub Release
